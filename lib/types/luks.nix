@@ -214,7 +214,7 @@ in
       internal = true;
       readOnly = true;
       type = lib.types.functionTo (lib.types.listOf lib.types.package);
-      default = pkgs: [ pkgs.gnugrep pkgs.cryptsetup ] ++ (lib.optionals (config.content != null) (config.content._pkgs pkgs));
+      default = pkgs: [ pkgs.gnugrep pkgs.cryptsetup pkgs.fido2luks ] ++ (lib.optionals (config.content != null) (config.content._pkgs pkgs));
       description = "Packages";
     };
   };
