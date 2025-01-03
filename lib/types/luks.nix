@@ -148,7 +148,7 @@ in
             cryptsetup luksAddKey "${config.device}" ${keyFile} ${keyFileArgs}
           ''))}
           ${toString (lib.forEach config.fido2Credentials (cred: ''
-            fido2luks add-key ${config.device} ${cred} systemd-tty-ask-password-agent
+            fido2luks add-key "${config.device}" ${cred} systemd-tty-ask-password-agent
           ''))}
         fi
         ${lib.optionalString (config.content != null) config.content._create}
